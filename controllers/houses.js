@@ -4,7 +4,7 @@ const router = express.Router()
 
 // Create POST controller
 router.post('/', async (req, res) => {
-  res.send('Hello from auth')
+  res.render('houses/list')
 })
 
 // Create GET controller
@@ -13,25 +13,25 @@ router.get('/', async (req, res) => {
 })
 
 router.get('/create', async (req, res) => {
-  res.send('Hello from auth')
+  res.render('houses/create')
 })
 
 router.get('/:id', async (req, res) => {
-  res.send('Hello from auth')
+  res.render('houses/one')
 })
 
 router.get('/:id/edit', async (req, res) => {
-  res.send('Hello from auth')
+  res.render('houses/edit')
 })
 
 // Create PATCH controller
 router.patch('/:id', async (req, res) => {
-  res.send('Hello from auth')
+  res.render('houses/one')
 })
 
 // Create DELETE controller
 router.delete('/:id', async (req, res) => {
-  res.send('Hello from auth')
+  res.render('houses/one')
 })
 
 // Views
