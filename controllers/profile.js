@@ -10,6 +10,9 @@ router.get('/', async (req, res) => {
 })
 
 // Create PATCH controller
+router.patch('/', async (req, res) => {
+  res.send('Hello from auth')
+})
 
 // Create DELETE controller
 
