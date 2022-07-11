@@ -9,7 +9,7 @@ router.post('/', async (req, res) => {
 
 // Create GET controller
 router.get('/', async (req, res) => {
-  res.send('Hello from houses')
+  res.render('houses/list')
 })
 
 router.get('/create', async (req, res) => {
