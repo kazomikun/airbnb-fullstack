@@ -3,11 +3,11 @@ const express = require('express')
 const router = express.Router()
 
 // Create POST controller
+router.post('/', async (req, res) => {
+  res.send('Hello from auth')
+})
 
 // Create GET controller
-router.get('/', async (req, res) => {
-  res.send('Hello from bookings')
-})
 
 // Create PATCH controller
 
