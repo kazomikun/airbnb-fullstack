@@ -1,0 +1,15 @@
+.logo {
+  width: 100px;
+}
+
+/* div .bg-image {
+  background-image: url('../images/thailand.jpg');
+  height: auto;
+  widows: auto;
+} */
+
+.bg-image {
+  background-image: url('../images/thailand.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
