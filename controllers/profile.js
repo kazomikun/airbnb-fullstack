@@ -6,12 +6,12 @@ const router = express.Router()
 
 // Create GET controller
 router.get('/', async (req, res) => {
-  res.send('Hello from profile')
+  res.render('houses/profile')
 })
 
 // Create PATCH controller
 router.patch('/', async (req, res) => {
-  res.send('Hello from auth')
+  res.render('houses/one')
 })
 
 // Create DELETE controller
