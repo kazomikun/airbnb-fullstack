@@ -4,24 +4,24 @@ const router = express.Router()
 
 // Create POST controller
 router.post('/login', async (req, res) => {
-  res.send('Hello from auth')
+  res.render('login')
 })
 
 router.post('/signup', async (req, res) => {
-  res.send('Hello from auth')
+  res.render('signup')
 })
 
 // Create GET controller
 router.get('/login', async (req, res) => {
-  res.send('Hello from auth')
+  res.render('login')
 })
 
 router.get('/signup', async (req, res) => {
-  res.send('Hello from auth')
+  res.render('signup')
 })
 
 router.get('/logout', async (req, res) => {
-  res.send('Hello from auth')
+  res.redirect('houses/list')
 })
 
 // Create PATCH controller
