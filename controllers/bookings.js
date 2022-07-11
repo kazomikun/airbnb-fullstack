@@ -4,7 +4,7 @@ const router = express.Router()
 
 // Create POST controller
 router.post('/', async (req, res) => {
-  res.send('Hello from auth')
+  res.render('profile')
 })
 
 // Create GET controller
