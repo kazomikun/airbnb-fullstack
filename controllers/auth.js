@@ -8,12 +8,36 @@ router.post('/login', async (req, res) => {
   res.render('login')
 })
 
-router.post('/signup', async (req, res) => {
-  console.log(req.body)
+router.post('/signup', async (req, res, next) => {
+  // console.log(req.body)
 
-  await Users.create(req.body)
-  // console.log(user)
-  res.render('signup')
+  try {
+    // check if user exists
+    let foundUser = await Users.findOne({
+      email: req.body.email,
+      password: req.body.password
+    })
+
+    if (foundUser) {
+      throw new Error('Email aleady exists, please login to your account')
+    }
+
+    let user = await Users.create(req.body)
+    // console.log(user)
+    // req.login(user)
+
+    req.login(user, err => {
+      if (err) {
+        throw err
+      } else {
+        console.log('ok')
+        res.redirect('/houses')
+      }
+    })
+  } catch (err) {
+    next(err)
+  }
+  // res.red('signup')
 })
 
 // Create GET controller
