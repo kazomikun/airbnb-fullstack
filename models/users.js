@@ -15,8 +15,8 @@ module.exports = mongoose.model('users', {
     required: true
   },
   password: {
-    title: String,
-    url: String
+    type: String,
+    required: true
   }
 })
 
