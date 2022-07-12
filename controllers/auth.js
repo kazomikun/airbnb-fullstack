@@ -1,6 +1,7 @@
 // Import Packages
 const express = require('express')
 const router = express.Router()
+const Users = require('../models/users')
 
 // Create POST controller
 router.post('/login', async (req, res) => {
@@ -8,6 +9,10 @@ router.post('/login', async (req, res) => {
 })
 
 router.post('/signup', async (req, res) => {
+  console.log(req.body)
+
+  await Users.create(req.body)
+  // console.log(user)
   res.render('signup')
 })
 
