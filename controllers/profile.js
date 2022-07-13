@@ -6,12 +6,20 @@ const router = express.Router()
 
 // Create GET controller
 router.get('/', async (req, res) => {
-  res.render('houses/profile')
+  if (req.isAuthenticated()) {
+    res.render('houses/profile')
+  } else {
+    res.redirect('/auth/login')
+  }
 })
 
 // Create PATCH controller
 router.patch('/', async (req, res) => {
-  res.render('houses/one')
+  if (req.isAuthenticated()) {
+    res.render('houses/one')
+  } else {
+    res.redirect('/auth/login')
+  }
 })
 
 // Create DELETE controller
