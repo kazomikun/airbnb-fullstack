@@ -4,7 +4,10 @@ const router = express.Router()
 
 // Create POST controller
 router.post('/', async (req, res) => {
-  res.render('profile')
+  if (req.isAuthenticated()) {
+  } else {
+    res.redirect('/auth/login')
+  }
 })
 
 // Create GET controller
