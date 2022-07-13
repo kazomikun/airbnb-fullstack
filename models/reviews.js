@@ -1,34 +1,32 @@
 const mongoose = require('mongoose')
+const ObjectId = mongoose.Schema.Types.ObjectId
 
 // create the users model
 
-let Reviews = mongoose.model('reviews', {
+module.exports = mongoose.model('reviews', {
   author: {
-    type: ObjectID,
+    type: ObjectId,
     required: true,
     ref: 'users'
   },
-  location: {
+  date: {
+    type: Date,
+    required: true,
+    default: Date.now
+  },
+  description: {
     type: String,
     required: true
   },
-  photos: [
-    {
-      type: String
-    }
-  ],
-  price: {
-    type: Number,
-    required: true
+  house: {
+    type: ObjectId,
+    required: true,
+    ref: 'houses'
   },
-  rooms: {
+  rating: {
     type: Number,
-    required: true
-  },
-  title: {
-    type: String,
     required: true
   }
 })
 
-module.exports = Reviews
+// module.exports = Reviews
