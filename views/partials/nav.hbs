@@ -7,12 +7,19 @@
 			</div>
 			<div class="col text-end">
 				<!-- buttons -->
+				{{#if user}}
+
 				<button type="button" class="btn btn-outline-secondary">
-					Tony Russo
+					{{user.name}}
 				</button>
-				<button type="button" class="btn btn-outline-secondary">
+				<button type="submit" class="btn btn-outline-secondary" onclick="document.location='/auth/logout'">
 					Logout
 				</button>
+				{{else}}
+				<button type="submit" class="btn btn-outline-secondary" onclick="document.location='/auth/login'">
+					Login
+				</button>
+				{{/if}}
 			</div>
 		</div>
 	</div>
