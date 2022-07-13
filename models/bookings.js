@@ -1,10 +1,11 @@
 const mongoose = require('mongoose')
+const ObjectId = mongoose.Schema.Types.ObjectId
 
 // create the users model
 
-let Bookings = mongoose.model('bookings', {
+module.exports = mongoose.model('bookings', {
   author: {
-    type: ObjectID,
+    type: ObjectId,
     required: true,
     ref: 'users'
   },
@@ -18,10 +19,10 @@ let Bookings = mongoose.model('bookings', {
     required: true
   },
   house: {
-    type: ObjectID,
+    type: ObjectId,
     required: true,
     ref: 'houses'
   }
 })
 
-module.exports = Bookings
+// module.exports = Bookings
