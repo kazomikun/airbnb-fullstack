@@ -1,14 +1,15 @@
 const mongoose = require('mongoose')
+const ObjectId = mongoose.Schema.Types.ObjectId
 
 // create the users model
 
-let Houses = mongoose.model('houses', {
+module.exports = mongoose.model('houses', {
   description: {
     type: String,
     required: true
   },
   host: {
-    type: ObjectID,
+    type: ObjectId,
     required: true,
     ref: 'users'
   },
@@ -35,4 +36,4 @@ let Houses = mongoose.model('houses', {
   }
 })
 
-module.exports = Houses
+// module.exports = Houses
