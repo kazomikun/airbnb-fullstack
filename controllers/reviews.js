@@ -3,10 +3,17 @@ const express = require('express')
 const router = express.Router()
 
 // Create POST controller
+router.post('/', async (req, res) => {
+  if (req.isAuthenticated()) {
+    res.render('Hello from reviews')
+  } else {
+    res.redirect('/auth/login')
+  }
+})
 
 // Create GET controller
 router.get('/', async (req, res) => {
-  res.send('Hello from reviews')
+  res.render('reviews')
 })
 
 // Create PATCH controller
