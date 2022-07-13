@@ -1,10 +1,11 @@
 <container class="position-absolute top-50 start-50 translate-middle">
-	<div class="card p-3" style="width: 30rem;">
+	<div class="bg-image">
+		<div class="card p-3" style="width: 30rem;">
 		<div class="row align-self-center">
 			<div class="col">
 				<img
 					class="card-img-top logo my-4"
-					src="./images/logo-airbnb.png"
+					src="/images/logo-airbnb.png"
 					alt="Card image cap"
 				/>
 			</div>
@@ -13,14 +14,14 @@
 		<div class="card-body">
 			<div class="row">
 				<div class="col">
-					<form>
+					<form action="/auth/login" class="" method="post">
 						<label for="exampleInputEmail1" class="form-label mb-0"
 							>Email</label
 						>
 						<input
 							type="email"
 							class="form-control mb-2 "
-							id="exampleInputEmail1"
+							name="email"
 							aria-describedby="emailHelp"
 						/>
 
@@ -30,8 +31,7 @@
 						<input
 							type="password"
 							class="form-control"
-							id="exampleInputPassword1"
-						/>
+name="password"						/>
 
 						<div id="emailHelp" class="form-text"></div>
 
@@ -49,5 +49,6 @@
 				</div>
 			</div>
 		</div>
+	</div>
 	</div>
 </container>
