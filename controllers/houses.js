@@ -4,16 +4,27 @@ const router = express.Router()
 
 // Create POST controller
 router.post('/', async (req, res) => {
-  res.render('houses/list')
+  if (req.isAuthenticated()) {
+    res.render('houses/list')
+  } else {
+    res.redirect('/auth/login')
+  }
 })
 
 // Create GET controller
 router.get('/', async (req, res) => {
-  res.render('houses/list')
+  let user = req.user
+  console.log('hi there')
+  console.log(user)
+  res.render('houses/list', { user })
 })
 
 router.get('/create', async (req, res) => {
-  res.render('houses/create')
+  if (req.isAuthenticated()) {
+    res.render('houses/create')
+  } else {
+    res.redirect('/auth/login')
+  }
 })
 
 router.get('/:id', async (req, res) => {
@@ -21,17 +32,29 @@ router.get('/:id', async (req, res) => {
 })
 
 router.get('/:id/edit', async (req, res) => {
-  res.render('houses/edit')
+  if (req.isAuthenticated()) {
+    res.render('houses/edit')
+  } else {
+    res.redirect('/auth/login')
+  }
 })
 
 // Create PATCH controller
 router.patch('/:id', async (req, res) => {
-  res.render('houses/one')
+  if (req.isAuthenticated()) {
+    res.render('houses/one')
+  } else {
+    res.redirect('/auth/login')
+  }
 })
 
 // Create DELETE controller
 router.delete('/:id', async (req, res) => {
-  res.render('houses/one')
+  if (req.isAuthenticated()) {
+    res.render('houses/one')
+  } else {
+    res.redirect('/auth/login')
+  }
 })
 
 // Views
