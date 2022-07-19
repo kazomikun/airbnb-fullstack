@@ -1,0 +1,33 @@
+<!-- {{#each myHouses as |myHouse|}} -->
+<div class=" card mb-0 mt-4">
+	<div class="card-body p-0">
+		<div class="row row-cols-1 p-0 ">
+			<div class="col-4">
+				<img
+					class="img-fluid"
+					src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295027/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2002/house_02_01.png"
+					alt="housepictures"
+				/>
+			</div>
+			<div class="col-8 ">
+				<h4 class="mt-2">{{title}}</h4>
+				<p class="my-1">4 rooms ${{price}}/night</p>
+				<p>{{description}}</p>
+				<a
+					href="/houses/{{myHouse._id}}/edit/"
+					class="btn btn-outline-secondary p-1 mb-3 "
+				>
+					Edit
+				</a>
+				<a
+					href="/houses/{{myHouse._id}}"
+					class="btn btn-outline-success p-1 mb-3 "
+
+				>
+					View
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- {{/each}} -->
