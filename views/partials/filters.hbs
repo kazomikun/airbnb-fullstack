@@ -1,0 +1,64 @@
+<div class="container">
+	<form action="/houses" method="GET">
+		<div class="row bg-light text-dark mb-3">
+			<!-- Location selection -->
+			<div class="col">
+				<select name="location" class="form-select" aria-label="Default select example">
+					<option selected>Any Location</option>
+					<option value="Koh Phangan">Koh Phangan</option>
+					<option value="Koh Samui">Koh Samui</option>
+					<option value="Bali">Bali</option>
+				</select>
+			</div>
+			<!-- Rooms Selection -->
+			<div class="col">
+				<select name="rooms" class="form-select" aria-label="Default select example">
+					<option selected>Any rooms</option>
+					<option value="1">1 room</option>
+					<option value="2">2 rooms</option>
+					<option value="3">3 rooms</option>
+					<option value="4">4 rooms</option>
+					<option value="5">5 rooms</option>
+				</select>
+			</div>
+			<!-- Max Price Selection -->
+			<div class="col">
+				<div class="input-group">
+					<span class="input-group-text">$</span>
+					<input
+						name="price"
+						type="number"
+						class="form-control"
+						placeholder="355"
+						aria-label="max price"
+						aria-describedby="basic-addon1"
+					/>
+				</div>
+			</div>
+			<!-- Ordering selection -->
+			<div class="col">
+				<div class="col">
+					<select class="form-select" aria-label="Default select example">
+						<option selected>Price (low to high)</option>
+						<option value="1">Price (high to low)</option>
+					</select>
+				</div>
+			</div>
+			<!-- House Name -->
+			<div class="col">
+				<div class="input-group">
+					<input
+						type="text"
+						class="form-control"
+						placeholder="Housename..."
+						aria-label="Housename"
+						aria-describedby="basic-addon1"
+					/>
+				</div>
+			</div>
+			<!-- Search button -->
+			<div class="col">
+				<button type="submit" class="btn btn-success">Search</button>
+			</div>
+		</div>
+	</form>
