@@ -6,26 +6,28 @@
         <!-- Send host a message section -->
         <div class=" m-4 p-4">
           <h1>List a House</h1>
-          <form>
+          <form action="/houses/{{house._id}}?_method=PATCH" method="POST">
             <label for="basic-url" class="form-label">Short Title</label>
             <div class="input-group mb-3">
               <input
                 type="text"
                 class="form-control"
                 aria-describedby="basic-addon3"
+								value="{{house.title}}"
+								name="title"
               />
             </div>
 
             <div class="mb-3">
               <label for="basic-url" class="form-label">Description</label>
 
-              <textarea class="form-control" rows="6"></textarea>
+              <textarea class="form-control" rows="6" name="description">{{house.description}}</textarea>
             </div>
             <!-- Rooms Selection -->
             <div class="mb-3">
               <label for="basic-url" class="form-label">Number of Rooms</label>
-              <select class="form-select" aria-label="Default select example">
-                <option selected></option>
+              <select class="form-select" name="rooms" aria-label="Default select example">
+                <option selected>{{house.rooms}}</option>
                 <option value="1">1 room</option>
                 <option value="2">2 rooms</option>
                 <option value="3">3 rooms</option>
@@ -34,9 +36,9 @@
               </select>
             </div>
             <div class="mb-3">
-              <label for="basic-url" class="form-label">Number of Rooms</label>
+              <label for="basic-url" class="form-label" name="location">Location</label>
               <select class="form-select" aria-label="Default select example">
-                <option selected></option>
+                <option selected>{{house.location}}</option>
                 <option value="1">Koh Phangan</option>
                 <option value="2">Koh Samui</option>
                 <option value="3">Bali</option>
@@ -53,6 +55,8 @@
                   class="form-control"
                   aria-label="max price"
                   aria-describedby="basic-addon1"
+									value="{{house.price}}"
+									name="price"
                 />
               </div>
             </div>
@@ -67,6 +71,8 @@
                 class="form-control"
                 id="basic-url"
                 aria-describedby="basic-addon3"
+								value="{{house.photos.[0]}}"
+								name="photos"
               />
             </div>
             <div class="input-group mb-1">
@@ -76,7 +82,9 @@
                 class="form-control"
                 id="basic-url"
                 aria-describedby="basic-addon3"
-              />
+								value="{{house.photos.[1]}}"
+								name="photos"
+  						/>
             </div>
             <div class="input-group mb-1">
               <input
@@ -85,6 +93,8 @@
                 class="form-control"
                 id="basic-url"
                 aria-describedby="basic-addon3"
+								value="{{house.photos.[2]}}"
+								name="photos"
               />
               <div class="input-group mb-1">
                 <input
@@ -93,6 +103,8 @@
                   class="form-control"
                   id="basic-url"
                   aria-describedby="basic-addon3"
+									value="{{house.photos.[3]}}"
+									name="photos"
                 />
               </div>
               <div class="input-group mb-1">
@@ -102,6 +114,8 @@
                   class="form-control"
                   id="basic-url"
                   aria-describedby="basic-addon3"
+									value="{{house.photos.[4]}}"
+									name="photos"
                 />
               </div>
               <div class="input-group mb-1">
@@ -111,6 +125,8 @@
                   class="form-control"
                   id="basic-url"
                   aria-describedby="basic-addon3"
+									value="{{house.photos.[5]}}"
+									name="photos"
                 />
               </div>
               <div class="input-group mb-1">
@@ -120,6 +136,8 @@
                   class="form-control"
                   id="basic-url"
                   aria-describedby="basic-addon3"
+									value="{{house.photos.[6]}}"
+									name="photos"
                 />
               </div>
               <div class="input-group mb-1">
@@ -129,6 +147,8 @@
                   class="form-control"
                   id="basic-url"
                   aria-describedby="basic-addon3"
+									value="{{house.photos.[7]}}"
+									name="photos"
                 />
               </div>
               <div class="input-group mb-1">
@@ -138,6 +158,8 @@
                   class="form-control"
                   id="basic-url"
                   aria-describedby="basic-addon3"
+									value="{{house.photos.[8]}}"
+									name="photos"
                 />
               </div>
               <div>
